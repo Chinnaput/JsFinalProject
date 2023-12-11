@@ -44,7 +44,7 @@ function getShibaImages() {
     const useUrls = true; // Change to false if you want only image URLs
     const useHttpsUrls = true; // Change to false if you prefer HTTP URLs
 
-    const apiUrl = `http://shibe.online/api/shibes?count=${count}&urls=${useUrls}&httpsUrls=${useHttpsUrls}`;
+    const apiUrl = `https://shibe.online/api/shibes?count=${count}&urls=${useUrls}&httpsUrls=${useHttpsUrls}`;
 
     fetch(apiUrl)
         .then(response => {
@@ -73,6 +73,9 @@ function displayShibaImages(images) {
         shibaImagesContainer.appendChild(imgElement);
     });
 }
+
+// เรียกใช้งานฟังก์ชัน getShibaImages เพื่อดึงรูปภาพ Shiba Inu
+getShibaImages();
 
 
 //RainbowText
