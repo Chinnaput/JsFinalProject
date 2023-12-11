@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <script src="currency.js" defer></script>
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Portfolio - API Project</title>
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <!--<img src="logo.png" alt="">-->
+                </span>
+
+                <div class="text logo-text">
+
+                    <span class="name">Chinnapat</span><i class='bx bx-coin-stack icon'></i>
+                    <span class="profession">Web dev</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="index.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="port.html">
+                            <i class='bx bx-user-pin icon'></i>
+                            <span class="text nav-text">Portfolio</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="js.html">
+                            <i class='bx bxl-javascript icon'></i>
+                            <span class="text nav-text">JS Project</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-plug icon'></i>
+                            <span class="text nav-text">API Project</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="home">
+        <div class="text-head">API Project
+        </div>
+        <div class="text">
+            <div class="text">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Random
+                API
+            </div>
+            <br>
+            <div class="text">
+                <center>
+                    
+                    <h1>Shiba Inu Images</h1><br>
+                    <div id="shibaImages"></div>
+                    <button onclick="getShibaImages()">Get Shiba Images</button>
+            </div>
+            </center>
+            <br><br>
+            <center>
+                <table border="1" style="min-width: 700px; max-width:100vh;">
+                    <tr>
+                        <td style="min-width: 700px;">
+                            <div class="api" id="coinRatesContainer">
+                                <h2>Coin Rates</h2>
+                                <div id="lastUpdateTime">
+                                    <label>Last Update Time: 12:49:57 AM</label>
+                                </div>
+                                <div id="prices" style="text-align: left; padding: 0 0 0 40px;">
+                                    <ul class="list-group list-group-numbered">
+                                        <li class="list-group-item">1INCH: </li>
+                                        <li class="list-group-item">AAVE: </li>
+                                        <li class="list-group-item">ABT: </li>
+                                        <li class="list-group-item">ACH: </li>
+                                        <li class="list-group-item">ACS: </li>
+                                        <li class="list-group-item">ADA: </li>
+                                        <li class="list-group-item">AED: </li>
+                                        <li class="list-group-item">BTC: </li>
+                                        <li class="list-group-item">ETH: </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <br>
+                        </td>
+                        <td>
+                            <center>
+                                <input type="text" id="ipserver" value="raykominecraft.ddns.net:26480" style="font-size: 20px; width:375px; text-align:center;"><br>
+    <button onclick="fetchserverstatus()">FETCH</button>
+    <p id="resultContainer"></p>
+    <p id="playername"></p>
+    
+
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="py-lg-5 py-md-4 py-sm-3 py-2"></div>
+                            <div class="row justify-content-center pt-5">
+                                <div class="col-lg-7 col-md-10">
+                                    <h3 class="fw-normal text-center mb-5 border-bottom pb-2">Google Sheet</h3>
+                                    <br>
+                                    <form class="form_overlay" method="POST" accept-charset="UTF-8" autocomplete="off"
+                                        name="contact">
+                                        <div class="row g-4">
+                                            <div class="col-lg-6">
+                                                <div class="input_overlay">
+                                                    <label for="fname" class="lable">Enter your first name</label>
+                                                    <input type="text" name="first_name" class="form-control" required
+                                                        autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="input_overlay">
+                                                    <label for="lname" class="lable">Enter your last name</label>
+                                                    <input type="text" name="last_name" class="form-control" required
+                                                        autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="input_overlay">
+                                                    <label for="email" class="lable">Enter email address</label>
+                                                    <input type="text" name="email" class="form-control" required
+                                                        autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="input_overlay">
+                                                    <label for="phone" class="lable">Phone number</label>
+                                                    <input type="text" name="phone" class="form-control" required
+                                                        autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="input_overlay">
+                                                    <label for="subject" class="lable">Subject</label>
+                                                    <input type="text" name="subject" class="form-control" required
+                                                        autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <br>
+
+                                            <center>
+                                                <div class="col-12 text-end">
+                                                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                                                </div>
+                                            </center>
+                                            <p id="demo"></p>
+                                        </div>
+
+                                    </form>
+                                    <br>
+                        </td>
+                        <td>
+                            <h3 class="fw-normal text-center mb-5 border-bottom pb-2">Google Sheet Show</h3><iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSebnO94u1NG-jhUmaoEzBwNq6F9Of9SaYzVzSlhgGaJBzot_QkxIDIrtxG87WWU5F_ozqmPqwA7aTp/pubhtml?widget=true&amp;headers=false"style="min-width: 700px; min-height:400px; height:100%;"></iframe>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <br><br>
+    </section>
+
+
+</body>
+
+</html>
