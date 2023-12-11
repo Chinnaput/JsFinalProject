@@ -40,50 +40,39 @@ modeSwitch.addEventListener("click", () => {
 
 //Random
 function getShibaImages() {
-    const count = 4; // Change the count as desired (from 1 to 100)
-    const useUrls = true; // Change to false if you want only image URLs
-    const useHttpsUrls = true; // Change to false if you prefer HTTP URLs
+      const count = 4; // Change the count as desired (from 1 to 100)
+      const useUrls = true; // Change to false if you want only image URLs
+      const useHttpsUrls = true; // Change to false if you prefer HTTP URLs
 
-    const apiUrl = `https://shibe.online/api/shibes?count=${count}&urls=${useUrls}&httpsUrls=${useHttpsUrls}`;
+      const apiUrl = `https://shibe.online/api/shibes?count=${count}&urls=${useUrls}&httpsUrls=${useHttpsUrls}`;
 
-    fetch(apiUrl)
+      fetch(apiUrl)
         .then(response => {
-            if (!response.ok) {
-                throw new Error(`Network response was not ok: ${response.status}`);
-            }
-            return response.json();
+          if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.status}`);
+          }
+          return response.json();
         })
         .then(data => {
-            displayShibaImages(data);
+          displayShibaImages(data);
         })
         .catch(error => {
-            console.error('Fetch error:', error);
+          console.error('Fetch error:', error);
         });
-}
+    }
 
-function displayShibaImages(images) {
-    const shibaImagesContainer = document.getElementById('shibaImages');
-    shibaImagesContainer.innerHTML = '';
+    function displayShibaImages(images) {
+      const shibaImagesContainer = document.getElementById('shibaImages');
+      shibaImagesContainer.innerHTML = '';
 
-    images.forEach(imageUrl => {
+      images.forEach(imageUrl => {
         const imgElement = document.createElement('img');
         imgElement.src = imageUrl;
         imgElement.style.maxWidth = '300px'; // Adjust the image size as needed
         imgElement.style.margin = '5px';
         shibaImagesContainer.appendChild(imgElement);
-    });
-}
-
-// เรียกใช้งานฟังก์ชัน getShibaImages เพื่อดึงรูปภาพ Shiba Inu
-getShibaImages();
-
-
-//RainbowText
-const textElements = document.querySelectorAll('.Rainbowtext');
-textElements.forEach((element) => {
-    element.classList.add('slideIn');
-});
-
+      });
+    }
 
 //Sheet
 const scriptURL = 'https://script.google.com/macros/s/AKfycbx0N7jiqW-aU7CS-g-3_SOYXrHHHxHImdfaeuYNMdeRWfxQj1tZU6CYTLEddcKoemI/exec'
